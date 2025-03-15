@@ -13,9 +13,9 @@ while (true)
      
     if (int.TryParse(input, out int integerInput))
     {
-        if (integerInput < 0)
+        if (integerInput < 0 || integerInput > 100)
         {
-            Console.WriteLine("Number cannot be negative number. It must be between 1 to 100.");
+            Console.WriteLine("Number must be between 1 to 100. Please an integer again.");
         }
         else if (computerNumber == integerInput)
         {
