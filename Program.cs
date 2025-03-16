@@ -1,6 +1,7 @@
 ﻿
 //Challenge: "Guess the Number" Game
 Console.WriteLine("Computer: I am thinking of a number between 1 to 100. You have 5 chances to guess it right.");
+Console.WriteLine("=============================================================================================");
 
 Random rdm = new Random();
 
@@ -19,20 +20,15 @@ while (true)
         }
         else if (computerNumber == integerInput)
         {
-            Console.WriteLine($"You guessed it right! The number is {computerNumber}");
+            Console.WriteLine($"You guessed it right! The number is {computerNumber}. You won!");
             break;
-        }
-        else if (integerInput > computerNumber)
-        {
-            chances--;
-            Console.WriteLine($"{integerInput} is too big. Try again. You have {chances} chances left");
         }
         else
         {
             chances--;
-            Console.WriteLine($"{integerInput} is too small. Try again. You have {chances} chances left");
-        }
+            Console.WriteLine($"The {integerInput} is {(integerInput > computerNumber ? "too big.":"too small.")}. You have {chances} left");
 
+        }
         if (chances == 0)
         {
             Console.WriteLine($"Game is over. You lose. The answer is {computerNumber}");
@@ -45,4 +41,7 @@ while (true)
     }
     
 }
+
+
+
 
